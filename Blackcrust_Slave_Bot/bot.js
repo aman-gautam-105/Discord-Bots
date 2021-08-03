@@ -32,7 +32,6 @@ async function replyToMessage(msg){
                     if(key.id === process.env.SUPER_OWNER_ID){
                         const randomIndex = Math.floor(Math.random() * abusiveReplies.length);
                         msg.reply(abusiveReplies[randomIndex]);
-                        break;
                     }
                 });
             }
@@ -43,10 +42,7 @@ async function replyToMessage(msg){
         let url = `https://g.tenor.com/v1/search?q=cutedog&key=${process.env.TENOR_KEY}&limit=8`;
         let response = await fetch(url);
         let json = await response.json();
-        msg.channel.send(json.results[0].url);
-        msg.channel.send(json.results[1].url);
-        msg.channel.send(json.results[2].url);
-        msg.channel.send(json.results[3].url);
+
     }
 }
 
